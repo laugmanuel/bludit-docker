@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  bludit:
+    image: laugmanuel/bludit:latest
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    volumes:
+      - ./bl-plugins:/usr/share/nginx/html/bl-plugins
+      - ./bl-themes:/usr/share/nginx/html/bl-themes
+      - ./bl-content:/usr/share/nginx/html/bl-content
