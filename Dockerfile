@@ -19,13 +19,13 @@ RUN addgroup -g 555 -S nginx \
          php7-mbstring \
          php7-openssl \
          php7-session \
-    && mkdir -p /usr/share/nginx/html \
+    && mkdir -p /bludit /usr/share/nginx/html \
     && rm /etc/nginx/conf.d/default.conf /etc/php7/php-fpm.d/www.conf
 
 RUN BLUDIT_VERSION=$(curl -sq https://api.github.com/repos/bludit/bludit/releases/latest | jq -r '.tag_name') \
     && curl -L --output /tmp/bludit-v${BLUDIT_VERSION}.tar.gz https://api.github.com/repos/bludit/bludit/tarball/${BLUDIT_VERSION} \
-    && tar -C /usr/share/nginx/html --strip-components=1 -xvf /tmp/bludit-v${BLUDIT_VERSION}.tar.gz \
-    && chown -R nginx:nginx /usr/share/nginx/html
+    && tar -C /bludit --strip-components=1 -xvf /tmp/bludit-v${BLUDIT_VERSION}.tar.gz \
+    && chown -R nginx:nginx /bludit
 
 COPY root/ /
 
