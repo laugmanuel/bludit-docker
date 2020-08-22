@@ -24,7 +24,12 @@ RUN addgroup -g 555 -S nginx \
 
 RUN BLUDIT_VERSION=$(curl -sq https://api.github.com/repos/bludit/bludit/releases/latest | jq -r '.tag_name') \
     && curl -L --output /tmp/bludit-v${BLUDIT_VERSION}.tar.gz https://api.github.com/repos/bludit/bludit/tarball/${BLUDIT_VERSION} \
-    && tar -C /bludit --strip-components=1 -xvf /tmp/bludit-v${BLUDIT_VERSION}.tar.gz \
+    && tar -C /bludit \
+      --strip-components=1 \
+      --exclude='.gitignore' \
+      --exclude='.github' \
+      --exclude='README.md' \
+      --exclude='LICENSE' -xvf /tmp/bludit-v${BLUDIT_VERSION}.tar.gz \
     && chown -R nginx:nginx /bludit
 
 COPY root/ /

@@ -8,16 +8,9 @@ for p in ${SOURCE_PATH} ${TARGET_PATH}; do
   fi
 done
 
-echo "[+] Installing grav ..."
+echo "[+] Installing bludit ..."
 
 for f in $(ls -A ${SOURCE_PATH}); do
-  if [ "${f}" == "bl-content" ] || [ "${f}" == "bl-themes" ] || [ "${f}" == "bl-plugins" ]; then
-    if [ -d ${TARGET_PATH}/${f} ] && [ $(ls -AR ${TARGET_PATH}/${f} | wc -l ) -gt 0 ]; then
-      echo "  - ${TARGET_PATH}${f} contains data (probably from a prior install). Skipping..."
-      continue
-    fi
-  fi
-  
   echo "  - Copying ${SOURCE_PATH}${f} to ${TARGET_PATH} ..."
   cp -a ${SOURCE_PATH}/${f} ${TARGET_PATH}/
 done
