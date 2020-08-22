@@ -26,10 +26,10 @@ RUN BLUDIT_VERSION=$(curl -sq https://api.github.com/repos/bludit/bludit/release
     && curl -L --output /tmp/bludit-v${BLUDIT_VERSION}.tar.gz https://api.github.com/repos/bludit/bludit/tarball/${BLUDIT_VERSION} \
     && tar -C /bludit \
       --strip-components=1 \
-      --exclude='.gitignore' \
-      --exclude='.github' \
-      --exclude='README.md' \
-      --exclude='LICENSE' -xvf /tmp/bludit-v${BLUDIT_VERSION}.tar.gz \
+      --exclude='*/.gitignore' \
+      --exclude='*/.github' \
+      --exclude='*/README.md' \
+      --exclude='*/LICENSE' -xvf /tmp/bludit-v${BLUDIT_VERSION}.tar.gz \
     && chown -R nginx:nginx /bludit
 
 COPY root/ /
