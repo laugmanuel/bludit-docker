@@ -16,6 +16,8 @@ The image uses a sane nginx config from [h5bp](https://github.com/h5bp/server-co
 - Nginx
 - PHP7 + FPM
 
+The image uses the `nginx` user with id `555`.
+
 # Example
 
 ```sh
