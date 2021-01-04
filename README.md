@@ -1,8 +1,7 @@
 # laugmanuel/bludit-docker
 
-[![badge1](https://img.shields.io/docker/cloud/build/laugmanuel/bludit?style=flat-square&logo=appveyor)](https://hub.docker.com/r/laugmanuel/bludit)
-[![badge2](https://img.shields.io/docker/cloud/automated/laugmanuel/bludit?style=flat-square&logo=appveyor)](https://hub.docker.com/r/laugmanuel/bludit)
-[![badge3](https://img.shields.io/docker/pulls/laugmanuel/bludit?style=flat-square&logo=appveyor)](https://hub.docker.com/r/laugmanuel/bludit)
+[![badge1](https://img.shields.io/docker/pulls/laugmanuel/bludit?logo=appveyor)](https://hub.docker.com/r/laugmanuel/grav)
+[![badge2](https://github.com/laugmanuel/bludit-docker/workflows/ci/badge.svg)](https://hub.docker.com/r/laugmanuel/grav)
 
 # What is this repository?
 
