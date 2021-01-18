@@ -30,7 +30,8 @@ RUN BLUDIT_VERSION=$(curl -sq https://api.github.com/repos/bludit/bludit/release
       --exclude='*/.github' \
       --exclude='*/README.md' \
       --exclude='*/LICENSE' -xvf /tmp/bludit-v${BLUDIT_VERSION}.tar.gz \
-    && chown -R nginx:nginx /bludit
+    && chown -R nginx:nginx /bludit \
+    && rm -rf /etc/nginx/conf.d/*
 
 COPY root/ /
 
