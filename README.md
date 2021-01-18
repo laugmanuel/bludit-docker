@@ -9,7 +9,7 @@ This repository serves as a base for the `laugmanuel/bludit` Docker image: https
 
 The image uses a sane nginx config from [h5bp](https://github.com/h5bp/server-configs-nginx) and some modified settings based on [Bludit Nginx config](https://docs.bludit.com/en/webservers/nginx).
 
-I provides a *automated weekly build* to keep up with the upstream alpine image!
+It provides a *automated weekly build* to keep up with the upstream alpine image!
 
 # Information
 
