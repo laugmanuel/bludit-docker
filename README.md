@@ -27,4 +27,22 @@ docker run -p 8080:8080 \
   -v $(pwd)/bl-themes:/usr/share/nginx/html/bl-themes \
   -v $(pwd)/bl-content:/usr/share/nginx/html/bl-content \
   -it laugmanuel/bludit:latest
+
+# or to skip theme installation
+docker run -p 8080:8080 \
+  -v $(pwd)/bl-plugins:/usr/share/nginx/html/bl-plugins \
+  -v $(pwd)/bl-themes:/usr/share/nginx/html/bl-themes \
+  -v $(pwd)/bl-content:/usr/share/nginx/html/bl-content \
+  -e SKIP_THEMES_INSTALL=true \
+  -it laugmanuel/bludit:latest
 ```
+
+# Environment variables
+
+### `SKIP_THEMES_INSTALL` (default: `false`)
+Skips the installation of build-in **bludit themes** if set to `true`.  
+**<ins>Note:</ins>** You need to keep the themes up-to-date yourself! Furture bludit releases might not work with old themes!  
+
+### `SKIP_PLUGINS_INSTALL` (default: `false`)
+Skips the installation of build-in **bludit plugins** if set to `true`.  
+**<ins>Note:</ins>** You need to keep the plugins up-to-date yourself! Furture bludit releases might break with old plugins!  
